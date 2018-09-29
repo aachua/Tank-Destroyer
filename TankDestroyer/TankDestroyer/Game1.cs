@@ -14,23 +14,21 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using MonoGame.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 namespace TankDestroyer
 {
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Game1: Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Song backgroundMusic;
         Player p1, p2;
         bool healthPackAcquired, bomb1Hit, bomb2Hit, bomb3Hit;
-        SoundEffect shot, hit, destroy;
+        SoundEffect shot, hit, destroy, backgroundMusic;
         Random rand;
-        Texture2D healthPack, bomb1, bomb2, bomb3, level1BG, level2BG, tree, evergreen, mainMenu, mapSelect, p1WinScreen, p2WinScreen, drawScreen;
+        Texture2D healthPack, bomb1, bomb2, bomb3, level1BG, level2BG, snowbush, tree, mainMenu, mapSelect, p1WinScreen, p2WinScreen, drawScreen;
         Vector2 healthPackPos, bomb1Pos, bomb2Pos, bomb3Pos;
         Rectangle healthPackBounds, bomb1Bounds, bomb2Bounds, bomb3Bounds, level1Viewport, level2Viewport, treeRect1, treeRect2;
 
@@ -118,18 +116,19 @@ namespace TankDestroyer
             mainMenu = Content.Load<Texture2D>(@"Images\MainMenu");
             p1WinScreen = Content.Load<Texture2D>(@"Images\p1WinScreen");
             p2WinScreen = Content.Load<Texture2D>(@"Images\p2WinScreen");
-            tree = Content.Load<Texture2D>("Tree");
-            evergreen = Content.Load<Texture2D>("Evergreen");
-            drawScreen = Content.Load<Texture2D>("stalemate");
-            mapSelect = Content.Load<Texture2D>(@"Images\p2WinScreen");
+            snowbush = Content.Load<Texture2D>(@"Images\Snowbush");
+            tree = Content.Load<Texture2D>(@"Images\Tree");
+            drawScreen = Content.Load<Texture2D>(@"Images\stalemate");
+            mapSelect = Content.Load<Texture2D>(@"Images\mapSelect");
 
 
             //Loading audio
-            this.backgroundMusic = Content.Load<Song>(@"Audio\Resolution_PremiumBeat");
-            MediaPlayer.Play(backgroundMusic);
             shot = Content.Load<SoundEffect>(@"Audio\TankShot");
             hit = Content.Load<SoundEffect>(@"Audio\Explosion");
             destroy = Content.Load<SoundEffect>(@"Audio\Explosion 03");
+            backgroundMusic = Content.Load<SoundEffect>(@"Audio\Resolution_PremiumBeat");
+            SoundEffectInstance instance = backgroundMusic.CreateInstance();
+            instance.IsLooped = true;
 
             //initializing player1's position at bottom left corner
             p1.playerPos.X = 0 + (float).5 * p1.playerTank.Width;
@@ -410,13 +409,13 @@ namespace TankDestroyer
                 //draw trees
                 if (gameState == State.Stage1Play)
                 {
-                    spriteBatch.Draw(evergreen, treeRect1, Color.White);
-                    spriteBatch.Draw(evergreen, treeRect2, Color.White);
+                    spriteBatch.Draw(tree, treeRect1, Color.White);
+                    spriteBatch.Draw(tree, treeRect2, Color.White);
                 }
                 if(gameState == State.Stage2Play)
                 {
-                    spriteBatch.Draw(tree, treeRect1, Color.Gray);
-                    spriteBatch.Draw(tree, treeRect2, Color.Gray);
+                    spriteBatch.Draw(snowbush, treeRect1, Color.Gray);
+                    spriteBatch.Draw(snowbush, treeRect2, Color.Gray);
                 }
                 spriteBatch.Draw(p1.playerHealth, p1.healthRect, Color.OrangeRed);
                 spriteBatch.Draw(p2.playerHealth, p2.healthRect, Color.Cyan);

@@ -1,8 +1,8 @@
 
 #----------------------------- Global Properties ----------------------------#
 
-/outputDir:bin/$(Platform)
-/intermediateDir:obj/$(Platform)
+/outputDir:bin
+/intermediateDir:obj
 /platform:Windows
 /config:
 /profile:Reach
@@ -13,41 +13,29 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Audio/Explosion 01.mp3
-/importer:Mp3Importer
+#begin Audio/Explosion 03.wav
+/importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Audio/Explosion 01.mp3
+/build:Audio/Explosion 03.wav
 
-#begin Audio/Explosion 03.mp3
-/importer:Mp3Importer
+#begin Audio/Explosion.wav
+/importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Audio/Explosion 03.mp3
+/build:Audio/Explosion.wav
 
-#begin Audio/Resolution_PremiumBeat.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Resolution_PremiumBeat.mp3
-
-#begin Audio/TankShot.mp3
-/importer:Mp3Importer
+#begin Audio/Resolution_PremiumBeat.wav
+/importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Audio/TankShot.mp3
+/build:Audio/Resolution_PremiumBeat.wav
 
-#begin Audio/Win Screen.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Win Screen.mp3
-
-#begin Audio\Explosion.mp3
-/importer:Mp3Importer
+#begin Audio/TankShot.wav
+/importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Audio\Explosion.mp3
+/build:Audio/TankShot.wav
 
 #begin Images/bomb.png
 /importer:TextureImporter
@@ -73,7 +61,7 @@
 /processorParam:TextureFormat=Color
 /build:Images/Bullet.png
 
-#begin Images/Evergreen.png
+#begin Images/explosion_strip..png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,7 +71,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Evergreen.png
+/build:Images/explosion_strip..png
 
 #begin Images/HealthBar.png
 /importer:TextureImporter
@@ -97,7 +85,7 @@
 /processorParam:TextureFormat=Color
 /build:Images/HealthBar.png
 
-#begin Images/Level1.jpg
+#begin Images/healthPack.gif
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,9 +95,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Level1.jpg
+/build:Images/healthPack.gif
 
-#begin Images/Level2.jpg
+#begin Images/Level1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -119,9 +107,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Level2.jpg
+/build:Images/Level1.png
 
-#begin Images/MainMenu.jpg
+#begin Images/Level2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -131,7 +119,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/MainMenu.jpg
+/build:Images/Level2.png
+
+#begin Images/MainMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/MainMenu.png
 
 #begin Images/mapSelect.png
 /importer:TextureImporter
@@ -145,7 +145,7 @@
 /processorParam:TextureFormat=Color
 /build:Images/mapSelect.png
 
-#begin Images/p1WinScreen.jpg
+#begin Images/p1WinScreen.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -155,7 +155,43 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/p1WinScreen.jpg
+/build:Images/p1WinScreen.png
+
+#begin Images/p2WinScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/p2WinScreen.png
+
+#begin Images/Snowbush.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/Snowbush.png
+
+#begin Images/stalemate.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/stalemate.png
 
 #begin Images/Tank.png
 /importer:TextureImporter
@@ -165,7 +201,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=True
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/Tank.png
 
@@ -180,52 +216,4 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/Tree.png
-
-#begin Images\healthPack.gif
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images\healthPack.gif
-
-#begin Images\mapSelect.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images\mapSelect.png
-
-#begin Images\p2WinScreen.jpg
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images\p2WinScreen.jpg
-
-#begin stalemate.jpg
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:stalemate.jpg
 
