@@ -128,6 +128,7 @@ namespace TankDestroyer
             destroy = Content.Load<SoundEffect>(@"Audio\Explosion 03");
             backgroundMusic = Content.Load<SoundEffect>(@"Audio\Resolution_PremiumBeat");
             SoundEffectInstance instance = backgroundMusic.CreateInstance();
+            instance.Play();
             instance.IsLooped = true;
 
             //initializing player1's position at bottom left corner
@@ -302,35 +303,41 @@ namespace TankDestroyer
                 }
                 //Collision detect for items
                 //bomb1 collision
-                if (p1.playerBounds.Intersects(bomb1Bounds) && bomb1Hit == false)
+                if ((p1.playerBounds.Intersects(bomb1Bounds) && bomb1Hit == false))
                 {
+                    hit.Play();
                     bomb1Hit = true;
                     p1.health -= 33;
                 }
                 if (p2.playerBounds.Intersects(bomb1Bounds) && bomb1Hit == false)
                 {
+                    hit.Play();
                     bomb1Hit = true;
                     p2.health -= 33;
                 }
                 //bomb2 collision
                 if (p1.playerBounds.Intersects(bomb2Bounds) && bomb2Hit == false)
                 {
+                    hit.Play();
                     bomb2Hit = true;
                     p1.health -= 33;
                 }
                 if (p2.playerBounds.Intersects(bomb2Bounds) && bomb2Hit == false)
                 {
+                    hit.Play();
                     bomb2Hit = true;
                     p2.health -= 33;
                 }
                 //bomb3 collision
                 if (p1.playerBounds.Intersects(bomb3Bounds) && bomb3Hit == false)
                 {
+                    hit.Play();
                     bomb3Hit = true;
                     p1.health -= 33;
                 }
                 if (p2.playerBounds.Intersects(bomb3Bounds) && bomb3Hit == false)
                 {
+                    hit.Play();
                     bomb3Hit = true;
                     p2.health -= 33;
                 }
